@@ -1,0 +1,27 @@
+<%= form_for [current_user, @cost] do |f| %>
+
+<div>
+	<%= f.label :name %>
+	<%= f.text_field :name, :placeholder => 'Title what you purchased' %>
+</div>
+
+<div>
+	<%= f.label :price %>
+	<%= f.text_field :price, :placeholder => 'Price in Rands' %>
+</div>
+
+<div>
+	<%= f.label :reason %>
+	<%= f.text_area :reason, :placeholder => 'State a reason for your expense' %>
+</div>
+
+<div>
+	<%= f.label 'Image link' %>
+	<%= f.text_field :image_url, :placeholder => 'Paste link of image here' %>
+</div>
+
+<div>
+<%= f.submit %>
+</div>
+
+<% end %>

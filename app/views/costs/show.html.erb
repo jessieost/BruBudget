@@ -1,0 +1,20 @@
+<h2><%= @cost.name %></h2>
+
+<p>Paid: <%= @cost.price %> Rand</p>
+
+<p>Reason for Purchase: <%= @cost.reason %></p>
+
+<p>
+	<%= link_to 'Edit this Cost', edit_user_cost_path(current_user, @cost) %>
+</p>
+
+<p>
+	<%= link_to 'Delete this Cost', user_cost_path(current_user, @cost),
+			method: :delete,
+			data: {confirm: 'Are you 100% positive that you wish to delete this cost? All of the information will be erased.'} %>
+</p>
+
+<p>
+<%= link_to 'Back to Home', user_costs_path(current_user) %>
+</p>
+
