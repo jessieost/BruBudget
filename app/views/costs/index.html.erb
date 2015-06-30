@@ -2,9 +2,10 @@
 
 
 <h3>Here are your Costs:</h3>
-<ul><% @costs.each do |cost| %>
-	<li><%= link_to cost.name, user_cost_path(current_user, cost) %>
-	<p><%= cost.created_at.strftime("Posted on: %B %d, %Y at %H:%M") %></p></li>
+<ul style="list-style-type: none;"><% @costs.each do |cost| %>
+	<li><strong><%= link_to cost.name, user_cost_path(current_user, cost) %></strong>
+	<p><strong>Cost:</strong> <%= cost.price %> R </li>
+	<%= cost.created_at.strftime("Posted on: %B %d, %Y at %H:%M") %></p></li>
 
 
 

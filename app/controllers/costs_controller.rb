@@ -1,6 +1,9 @@
 class CostsController < ApplicationController
+	before_action :authenticate_user! #add except: [:blahblahblah] to liimit options for the authentication
+
 	def index
-		@costs = Cost.all 
+		# @costs = Cost.all 
+		@costs = current_user.costs
 	end
 
 	def show
@@ -18,7 +21,7 @@ class CostsController < ApplicationController
 	def create
 		@cost = current_user.costs.build(cost_params)
 		if @cost.save
-			redirect_to user_cost_path(current_user, @cost)
+			redirect_to user_cost_path(current_user, @cost), notice: "Cost successfully created."
 		else
 			render 'new'
 		end
